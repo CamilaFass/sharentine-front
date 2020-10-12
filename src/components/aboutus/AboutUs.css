@@ -1,0 +1,44 @@
+.us {
+  background-color: #f6fbf8;
+}
+
+/* .quemsomos {
+    background-color: #f6fbf8;
+  } */
+
+.containerquem {
+  padding: 50px;
+  font-family: "Roboto";
+}
+
+.projeto {
+  padding: 30px;
+  font-family: "Roboto";
+}
+
+.tituloquem {
+  padding-top: 20px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+a.socialus:link,
+a.socialus:visited,
+a.socialus:active,
+a.socialus:hover {
+  padding: 10px;
+  color: #3e4f46 !important;
+  text-decoration: none;
+}
+
+.socialus {
+  color: #3e4f46;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.rounded-circle {
+  padding-top: 20px;
+}
