@@ -1,0 +1,18 @@
+.centro {
+  text-align: center;
+  background-color: #3e4f46;
+}
+
+a.social:link,
+a.social:visited,
+a.social:active,
+a.social:hover {
+  padding: 10px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.social {
+  color: white;
+  padding: 20px;
+}
