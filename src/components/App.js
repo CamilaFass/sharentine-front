@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+
+import Menu from "./menu/Menu";
 
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
+      <Menu />
     </div>
   );
 }
