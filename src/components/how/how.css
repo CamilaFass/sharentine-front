@@ -1,0 +1,13 @@
+.howtitle {
+  background-color: #f6fbf8;
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.howtext {
+  font-family: "Roboto";
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 60px;
+}
