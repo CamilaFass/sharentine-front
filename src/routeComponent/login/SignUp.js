@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Menu from '../components/menu/Menu';
-import Footer from '../components/footer/Footer';
+// import Menu from '../components/menu/Menu';
+// import Footer from '../components/footer/Footer';
 import axios from 'axios';
 import './SignUp.css';
 

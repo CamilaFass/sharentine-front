@@ -1,6 +1,6 @@
-import React from "react";
-import "./how.css";
-import HowImg from "./howimg.svg";
+import React from 'react';
+import './How.css';
+import HowImg from './howimg.svg';
 
 const How = () => {
   return (
