@@ -1,8 +1,9 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 import "./LoggedMenu.css";
 
-const Menu = () => {
+const LoggedMenu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light menu">
       <a className="navbar-brand menu-brand mr-5" href="#">
@@ -46,9 +47,9 @@ const Menu = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/logout">
               Logout
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -56,4 +57,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default LoggedMenu;
