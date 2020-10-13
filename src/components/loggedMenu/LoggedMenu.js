@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 import "./LoggedMenu.css";
 
@@ -46,9 +47,9 @@ const LoggedMenu = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/logout">
               Logout
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
