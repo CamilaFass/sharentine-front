@@ -5,3 +5,7 @@
 .menu-brand {
   color: #3e4f46 !important;
 }
+
+.menu-brand img {
+  width: 20%;
+}

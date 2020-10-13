@@ -1,0 +1,89 @@
+.sign-in-h1 {
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.sign-up-h1 {
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.div-signup {
+  height: 84vh;
+}
+
+.img-form-signup {
+  width: 100px;
+}
+
+.section-form-signup-rectangle {
+  width: 382px;
+  /* background: rgb(238,174,202); */
+  background-color: white;
+  border: solid lightgrey;
+  margin-left: -1px;
+  border-radius: 10px;
+}
+
+.section-form-signup-rectangle input {
+  border-radius: 10px;
+  width: 300px;
+  height: 35px;
+  align-self: center;
+}
+
+.section-form-signup-rectangle label {
+  padding-top: 25px;
+}
+
+.section-form-signup-rectangle :placeholder-shown {
+  padding-left: 20px;
+}
+
+.section-form-signup-rectangle button {
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 150px;
+  align-self: center;
+}
+
+/* style signin.hbs */
+
+/* .div-signin {
+  height: 84vh;
+}
+
+.img-form-signin {
+  width: 584px;
+}
+
+.section-form-signin-rectangle {
+  width: 382px; */
+/* background: rgb(238,174,202); */
+/* background-color: white;
+
+  margin-left: -1px;
+} */
+
+/* .section-form-signin-rectangle input {
+  border-radius: 50px;
+  width: 300px;
+  height: 35px;
+  align-self: center;
+}
+
+.section-form-signin-rectangle label {
+  padding-top: 25px;
+}
+
+.section-form-signin-rectangle :placeholder-shown {
+  padding-left: 20px;
+}
+
+.section-form-signin-rectangle button {
+  border-radius: 50px;
+  margin-top: 30px;
+  width: 150px;
+  align-self: center;
+} */
