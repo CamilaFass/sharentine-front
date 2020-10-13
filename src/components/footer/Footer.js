@@ -11,7 +11,10 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-github"></i>{" "}
+          <i className="fab fa-github"></i> <br />
+          <p>
+            <small>Sharentine 2020</small>
+          </p>
         </a>
       </span>
     </div>

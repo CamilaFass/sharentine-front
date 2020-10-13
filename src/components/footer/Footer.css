@@ -1,6 +1,8 @@
 .centro {
   text-align: center;
   background-color: #3e4f46;
+  padding-top: 10px;
+  margin-bottom: 2px;
 }
 
 a.social:link,
@@ -14,5 +16,5 @@ a.social:hover {
 
 .social {
   color: white;
-  padding: 20px;
+  padding-top: 10px;
 }
