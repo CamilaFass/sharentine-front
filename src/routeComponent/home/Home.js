@@ -5,8 +5,8 @@ import Login from '../login/Login';
 
 const Home = (props) => {
   return (
-    <div>
-      <Login {...props} setUserState />
+    <div className="pt-4">
+      <Login {...props} />
       <How />
       <AboutUs />
     </div>

@@ -1,14 +1,15 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './Menu.css';
 
 const Menu = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light menu">
-      <a className="navbar-brand col-2 menu-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-light menu fixed-top">
+      <Link className="navbar-brand col-2 menu-brand" to="/">
         <img src="./images/logo.png" alt="logo" />
         Sharentine
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -27,19 +28,19 @@ const Menu = () => {
       >
         <ul className="navbar-nav m-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <HashLink className="nav-link" to="/#HowItWorks">
               How it works
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <HashLink className="nav-link" to="/#AboutUs">
               About us
-            </a>
+            </HashLink>
           </li>
         </ul>
       </div>

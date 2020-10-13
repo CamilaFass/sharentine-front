@@ -14,7 +14,7 @@ function App() {
     const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '""');
     console.log(storedUser);
 
-    setState({ ...storedUser });
+    setState(storedUser !== '' ? { ...storedUser } : { user: {}, token: '' });
   }, []);
 
   const handleLoginSubmit = (data) => {
@@ -37,26 +37,28 @@ function App() {
           <PrivateRoute exact path="/feed" component={Menu} user={state} />
           {/* Como as rotas publicas só sāo renderizadas quando NĀO existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para a home */}
           <Route>
-            <Redirect to="/" />
+            <Redirect to="/feed" />
           </Route>
         </Switch>
       ) : (
         // Caso contrário, renderize as rotas públicas
-        <Switch>
+        <div>
           <Menu />
-          <Route exact path="/signup" component={SignUp} />
-          <Route
-            exact
-            path="/"
-            render={(props) => {
-              return <Home {...props} setUserState={handleLoginSubmit} />;
-            }}
-          />
-          {/* Como as rotas privadas só sāo renderizadas quando existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para o login */}
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route exact path="/signup" component={SignUp} />
+            <Route
+              exact
+              path="/"
+              render={(props) => {
+                return <Home {...props} setUserState={handleLoginSubmit} />;
+              }}
+            />
+            {/* Como as rotas privadas só sāo renderizadas quando existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para o login */}
+            <Route>
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </div>
       )}
     </BrowserRouter>
   );

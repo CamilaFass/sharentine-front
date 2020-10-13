@@ -1,12 +1,12 @@
-import React from "react";
-import "./AboutUs.css";
-import Camila from "./camila.png";
-import Arua from "./arua.jpeg";
-import Victor from "./victor.jpeg";
+import React from 'react';
+import './AboutUs.css';
+import Camila from './camila.png';
+import Arua from './arua.jpeg';
+import Victor from './victor.jpeg';
 
 const AboutUs = () => {
   return (
-    <div className="us">
+    <div id="AboutUs" className="us">
       <div className="quemsomos">
         <div className="quemsomos">
           <h1>
@@ -34,16 +34,16 @@ const AboutUs = () => {
                       className="socialus"
                       target="_blank"
                     >
-                      <i className="fab fa-github"></i>{" "}
+                      <i className="fab fa-github"></i>{' '}
                     </a>
-                  </span>{" "}
+                  </span>{' '}
                   <span>
                     <a
                       href="https://www.linkedin.com/in/arua-monteiro/"
                       className="socialus"
                       target="_blank"
                     >
-                      <i className="fab fa-linkedin"></i>{" "}
+                      <i className="fab fa-linkedin"></i>{' '}
                     </a>
                   </span>
                 </center>
@@ -71,16 +71,16 @@ const AboutUs = () => {
                       className="socialus"
                       target="_blank"
                     >
-                      <i className="fab fa-github"></i>{" "}
+                      <i className="fab fa-github"></i>{' '}
                     </a>
-                  </span>{" "}
+                  </span>{' '}
                   <span>
                     <a
                       href="https://www.linkedin.com/in/fassarella/"
                       className="socialus"
                       target="_blank"
                     >
-                      <i className="fab fa-linkedin"></i>{" "}
+                      <i className="fab fa-linkedin"></i>{' '}
                     </a>
                   </span>
                 </center>
@@ -114,19 +114,19 @@ const AboutUs = () => {
                     <span>
                       <a
                         href="https://github.com/victormonteiro2"
-                        class="socialus"
+                        className="socialus"
                         target="_blank"
                       >
-                        <i class="fab fa-github"></i>{" "}
+                        <i className="fab fa-github"></i>{' '}
                       </a>
-                    </span>{" "}
+                    </span>{' '}
                     <span>
                       <a
                         href="https://www.linkedin.com/in/victor-monteiro2/"
-                        class="socialus"
+                        className="socialus"
                         target="_blank"
                       >
-                        <i class="fab fa-linkedin"></i>{" "}
+                        <i className="fab fa-linkedin"></i>{' '}
                       </a>
                     </span>
                   </center>

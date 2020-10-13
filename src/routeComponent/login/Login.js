@@ -16,8 +16,10 @@ function Login(props) {
 
   const handleChange = (event) => {
     setState({
+      ...state,
       [event.currentTarget.name]: event.currentTarget.value
     });
+    console.log(state);
   };
 
   // Dispara a requisiçāo HTTP para o backend com os dados do formulário
@@ -58,7 +60,14 @@ function Login(props) {
   };
 
   return (
-    <div className="SignUp">
+    <div className="SignUp d-flex">
+      <div className="col-6">
+        <img
+          className="img-form-signup w-100 justify-content-center"
+          src="./images/authImg.svg"
+          alt=""
+        />
+      </div>
       <div
         className="div-signup d-flex justify-content-center align-content-center flex-wrap w-100"
         id="form"
@@ -82,7 +91,7 @@ function Login(props) {
               value={state.email}
             />
 
-            <label for="signUpPasswordInput">Password</label>
+            <label htmlFor="signUpPasswordInput">Password</label>
             <input
               type="password"
               className="password"
@@ -102,14 +111,8 @@ function Login(props) {
               </button>
             )}
           </form>
-          <a href="#">Create New Account</a>
+          <Link to="/signup">Create New Account</Link>
         </section>
-
-        <img
-          className="img-form-signup w-50"
-          src="./images/authImg.svg"
-          alt=""
-        />
       </div>
     </div>
   );
