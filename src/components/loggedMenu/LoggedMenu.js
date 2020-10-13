@@ -2,7 +2,7 @@ import React from "react";
 
 import "./LoggedMenu.css";
 
-const Menu = () => {
+const LoggedMenu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light menu">
       <a className="navbar-brand menu-brand mr-5" href="#">
@@ -56,4 +56,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default LoggedMenu;
