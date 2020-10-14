@@ -1,114 +1,86 @@
 import React from "react";
-import "./card.css";
+import "./Card.css";
 
 const Card = () => {
   return (
-    <div>
-      <div className="container posts-content">
-        <div className="row">
-          <div className="col-lg-6">
-            <div className="card mb-4">
-              <div className="card-body">
-                <div className="media mb-3">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                    className="d-block ui-w-40 rounded-circle"
-                    alt=""
-                  />
-                  <div className="media-body ml-3">
-                    Kenneth Frazier
-                    <div className="text-muted small">3 days ago</div>
-                  </div>
-                </div>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus finibus commodo bibendum. Vivamus laoreet blandit
-                  odio, vel finibus quam dictum ut.
-                </p>
-                <a
-                  href="javascript:void(0)"
-                  className="ui-rect ui-bg-cover"
-                  style="background-image: url('https://bootdey.com/img/Content/avatar/avatar3.png');"
-                ></a>
+    <div className="col-md-6 gedf-main">
+      {/* <!--- \\\\\\\Post--> */}
+      <div class="card gedf-card">
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="mr-2">
+                <img
+                  class="rounded-circle"
+                  width="45"
+                  src="https://picsum.photos/50/50"
+                  alt=""
+                />
               </div>
-              <div className="card-footer">
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted"
+              <div class="ml-2">
+                <div class="h5 m-0">@LeeCross</div>
+                <div class="h7 text-muted">Miracles Lee Cross</div>
+              </div>
+            </div>
+            <div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-link dropdown-toggle"
+                  type="button"
+                  id="gedf-drop1"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
-                  <strong>123</strong> Likes
-                  {/* </small> */}
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted ml-3"
+                  <i class="fa fa-ellipsis-h"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="gedf-drop1"
                 >
-                  <strong>12</strong> Comments
-                  {/* </small> */}
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted ml-3"
-                >
-                  <small className="align-middle">Repost</small>
-                </a>
+                  <div class="h6 dropdown-header">Configuration</div>
+                  <a class="dropdown-item" href="#">
+                    Save
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    Hide
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    Report
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="card mb-4">
-              <div className="card-body">
-                <div className="media mb-3">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    className="d-block ui-w-40 rounded-circle"
-                    alt=""
-                  />
-                  <div className="media-body ml-3">
-                    Kenneth Frazier
-                    <div className="text-muted small">3 days ago</div>
-                  </div>
-                </div>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus finibus commodo bibendum. Vivamus laoreet blandit
-                  odio, vel finibus quam dictum ut.
-                </p>
-                <a
-                  href="javascript:void(0)"
-                  className="ui-rect ui-bg-cover"
-                  style="background-image: url('https://bootdey.com/img/Content/avatar/avatar1.png');"
-                ></a>
-              </div>
-              <div className="card-footer">
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted"
-                >
-                  <small className="align-middle">
-                    <strong>123</strong> Likes
-                  </small>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted ml-3"
-                >
-                  <small className="align-middle">
-                    <strong>12</strong> Comments
-                  </small>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  className="d-inline-block text-muted ml-3"
-                >
-                  <i className="ion ion-md-share align-middle"></i>&nbsp;
-                  <small className="align-middle">Repost</small>
-                </a>
-              </div>
-            </div>
+        </div>
+        <div class="card-body">
+          <div class="text-muted h7 mb-2">
+            {" "}
+            <img width="300" src="https://picsum.photos/50/50" alt="" />
           </div>
+          <a class="card-link" href="#">
+            <h5 class="card-title">
+              Lorem ipsum dolor sit amet, consectetur adip.
+            </h5>
+          </a>
+
+          <p class="card-text" style={{ fontFamily: "Gafata" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+            recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste
+            voluptates.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">
+            <i class="fa fa-gittip"></i> Like
+          </a>
+          <a href="#" class="card-link">
+            <i class="fa fa-comment"></i> Comment
+          </a>
+          <a href="#" class="card-link">
+            <i class="fa fa-mail-forward"></i> Share
+          </a>
         </div>
       </div>
     </div>
