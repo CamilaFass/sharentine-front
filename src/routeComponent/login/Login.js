@@ -61,9 +61,9 @@ function Login(props) {
 
   return (
     <div className="SignUp d-flex">
-      <div className="col-6">
+      <div className="col-7 d-flex justify-content-center">
         <img
-          className="img-form-signup w-100 justify-content-center"
+          className="img-form-signup w-75 "
           src="./images/authImg.svg"
           alt=""
         />
