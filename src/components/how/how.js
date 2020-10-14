@@ -1,11 +1,12 @@
-import React from 'react';
-import './How.css';
-import HowImg from './howimg.svg';
+import React from "react";
+import "./How.css";
+import HowImg from "./howimg.svg";
 
 const How = () => {
   return (
     <div id="HowItWorks">
       <div>
+        <hr />
         <div>
           <h1 className="howtitle">
             <center>How it Works</center>
@@ -14,7 +15,7 @@ const How = () => {
             <div className="row d-flex flex-wrap">
               <div className="col-md-6 howtext">
                 <p>
-                  We understand these are diffuclt times, due to quarantine we
+                  We understand these are difficult times, due to quarantine we
                   are spending way more time online, but also sometimes regular
                   social media may be <i>too much</i>. Our idea is easy: share
                   simple activities, such as a book you wanna read, a song/album

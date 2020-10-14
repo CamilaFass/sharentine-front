@@ -1,13 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
-import './Menu.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import "./Menu.css";
+import Logo from "./share.svg";
 
 const Menu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light menu fixed-top">
       <Link className="navbar-brand col-2 menu-brand" to="/">
-        <img src="./images/logo.png" alt="logo" />
+        <img
+          src={Logo}
+          alt="logo"
+          style={{ fontFamily: "Gafata" }}
+          className="logo"
+        />
         Sharentine
       </Link>
       <button
