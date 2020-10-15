@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
-import Menu from "./menu/Menu";
-import LoggedMenu from "./loggedMenu/LoggedMenu";
-import Feed from "../routeComponent/feed/Feed";
-import Footer from "./footer/Footer";
-import Logout from "../routeComponent/login/Logout";
-import SignUp from "../routeComponent/login/SignUp";
+import React, { useState, useEffect } from 'react';
+import Menu from './menu/Menu';
+import LoggedMenu from './loggedMenu/LoggedMenu';
+import Feed from '../routeComponent/feed/Feed';
+import Footer from './footer/Footer';
+import Logout from '../routeComponent/login/Logout';
+import SignUp from '../routeComponent/login/SignUp';
 // import Login from '../routeComponent/login/Login';
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import PrivateRoute from "../routeComponent/login/PrivateRoute";
-import Home from "../routeComponent/home/Home";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import PrivateRoute from '../routeComponent/login/PrivateRoute';
+import Home from '../routeComponent/home/Home';
+import Profile from '../routeComponent/profile/Profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [state, setState] = useState({ user: {}, token: "" });
+  const [state, setState] = useState({ user: {}, token: '' });
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
+    const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '""');
     console.log(storedUser);
 
-    setState(storedUser !== "" ? { ...storedUser } : { user: {}, token: "" });
+    setState(storedUser !== '' ? { ...storedUser } : { user: {}, token: '' });
   }, []);
 
   const handleLoginSubmit = (data) => {
@@ -29,7 +31,7 @@ function App() {
     // Limpa o state do componente para deslogar o usuario
     setState({
       user: {},
-      token: "",
+      token: ''
     });
   };
 
