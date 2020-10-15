@@ -3,8 +3,9 @@ body {
 }
 
 /* Profile container */
-.profile {
-  margin: 20px 0;
+.profile-card {
+  margin-top: 0px;
+  padding-top: 20px;
 }
 
 /* Profile sidebar */
