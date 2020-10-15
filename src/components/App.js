@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from '../routeComponent/login/PrivateRoute';
 import Home from '../routeComponent/home/Home';
 import Profile from '../routeComponent/profile/Profile';
+import ProfileEdit from '../routeComponent/profile/ProfileEdit';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -53,6 +54,12 @@ function App() {
               exact
               path="/profile"
               component={Profile}
+              user={state}
+            />
+            <PrivateRoute
+              exact
+              path="/profile-edit"
+              component={ProfileEdit}
               user={state}
             />
             {/* Como as rotas publicas só sāo renderizadas quando NĀO existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para a home */}
