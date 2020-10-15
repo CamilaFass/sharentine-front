@@ -1,7 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import api from "../../apis/";
 import "./NewPost.css";
 
-const OtherPost = () => {
+const NewPost = (props) => {
+  const history = useHistory();
+
+  const [state, setState] = useState({
+    title: "",
+    content: "",
+    loading: false,
+    error: "",
+  });
+
+  const handleChange = (event) => {
+    console.log(props);
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+    console.log(state);
+  };
+
+  const handleSubmit = async (event) => {
+    setState({ ...state, loading: true });
+
+    try {
+      // Impedir comportamento padrāo do formulário
+      event.preventDefault();
+
+      // Disparar a requisiçāo manualmente através do React
+      const response = await api.post(`/post/${props.user._id}`, state);
+      console.log(response);
+
+      // Cancela o estado de loading
+      setState({title: "", content: "", loading: false, error: ""});
+
+      // Navega programaticamente para a lista de projetos
+      history.push("/feed");
+    } catch (err) {
+      console.error(err);
+      setState({ ...state, loading: false, error: err.message });
+    }
+  };
+
   return (
     <div className="gedf-main">
       {/* <!--- \\\\\\\Post--> */}
@@ -39,30 +81,37 @@ const OtherPost = () => {
           </ul>
         </div>
         <div className="card-body">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="tab-content" id="myTabContent">
               <div className="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                 <div className="form-group">
-                  <label className="sr-only" for="title">
+                  <label className="sr-only" htmlFor="title">
                     post title
                   </label>
-                  <input type='text'
+                  <input
+                    type="text"
+                    name="title"
                     className="form-control"
                     id="title"
                     placeholder="Post Title"
                     style={{ fontFamily: "Gafata" }}
+                    onChange={handleChange}
+                    value={state.title}
                   ></input>
                 </div>
                 <div className="form-group">
-                  <label className="sr-only" for="message">
+                  <label className="sr-only" htmlFor="message">
                     post
                   </label>
                   <textarea
+                    name="content"
                     className="form-control"
                     id="message"
                     rows="3"
                     placeholder="What are you thinking?"
                     style={{ fontFamily: "Gafata" }}
+                    onChange={handleChange}
+                    value={state.content}
                   ></textarea>
                 </div>
               </div>
@@ -70,7 +119,7 @@ const OtherPost = () => {
                 <div className="form-group">
                   <div className="custom-file">
                     <input type="file" className="custom-file-input" id="customFile" style={{ fontFamily: "Roboto" }} />
-                    <label className="custom-file-label" for="customFile">
+                    <label className="custom-file-label" htmlFor="customFile">
                       Upload image
                     </label>
                   </div>
@@ -119,4 +168,4 @@ const OtherPost = () => {
   );
 };
 
-export default OtherPost;
+export default NewPost;
