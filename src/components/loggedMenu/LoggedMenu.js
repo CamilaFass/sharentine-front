@@ -6,9 +6,9 @@ import './LoggedMenu.css';
 const LoggedMenu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light menu">
-      <a className="navbar-brand menu-brand mr-5" href="#">
+      <Link className="navbar-brand menu-brand mr-5" to="/feed">
         Sharentine
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"

@@ -49,6 +49,12 @@ function App() {
               handleLogout={handleLogout}
             />
             <PrivateRoute exact path="/feed" component={Feed} user={state} />
+            <PrivateRoute
+              exact
+              path="/profile"
+              component={Profile}
+              user={state}
+            />
             {/* Como as rotas publicas só sāo renderizadas quando NĀO existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para a home */}
             <Route>
               <Redirect to="/feed" />
