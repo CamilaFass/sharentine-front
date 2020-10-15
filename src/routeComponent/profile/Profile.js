@@ -13,46 +13,45 @@ function Profile(props) {
   }, []);
 
   return (
-    <div>
-      <div className="container">
-        <div className="row profile">
-          <div className="col-md-3">
-            <div className="profile-sidebar">
-              {/* <!-- SIDEBAR USERPIC --> */}
-              <div className="profile-userpic">
-                <img src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg" />
-              </div>
-              {/* <!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE --> */}
-              <div className="profile-usertitle">
-                <div className="profile-usertitle-name">{state.user.name}</div>
-                <div className="profile-usertitle-location">São Paulo</div>
-              </div>
-              {/* <!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS --> */}
-              <div className="profile-userbuttons">
-                <button type="button" className="btn btn-success btn-sm">
-                  Follow
-                </button>
-              </div>
-              {/* <!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU --> */}
-              <div className="profile-usermenu ">
-                <ul className="nav justify-content-center">
-                  <li>
-                    <Link to="/profile-edit">
-                      <i className="glyphicon glyphicon-user"></i>
-                      Account Settings{' '}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              {/* <!-- END MENU --> */}
-            </div>
+    <div className="profile-card d-flex col-md-3">
+      {/* <div className="container row"> */}
+      {/* <div className="row profile"> */}
+      <div className="">
+        <div className="profile-sidebar">
+          {/* <!-- SIDEBAR USERPIC --> */}
+          <div className="profile-userpic">
+            <img src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg" />
           </div>
-          a
+          {/* <!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE --> */}
+          <div className="profile-usertitle">
+            <div className="profile-usertitle-name">{state.user.name}</div>
+            <div className="profile-usertitle-location">São Paulo</div>
+          </div>
+          {/* <!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS --> */}
+          <div className="profile-userbuttons">
+            <button type="button" className="btn btn-success btn-sm">
+              Follow
+            </button>
+          </div>
+          {/* <!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU --> */}
+          <div className="profile-usermenu ">
+            <ul className="nav justify-content-center">
+              <li>
+                <Link to="/profile-edit">
+                  <i className="glyphicon glyphicon-user"></i>
+                  Account Settings{' '}
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {/* <!-- END MENU --> */}
         </div>
       </div>
+      {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }
