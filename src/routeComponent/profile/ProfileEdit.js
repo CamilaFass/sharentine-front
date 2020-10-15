@@ -1,10 +1,10 @@
 import React from 'react';
-import Profile from './Profile';
+import ProfileCard from '../../components/profileCard/ProfileCard';
 
 function ProfileEdit(props) {
   return (
     <div className="d-flex mt-3">
-      <Profile />
+      <ProfileCard />
       <div className="col-md-9">
         <div className="profile-content">
           <form className="needs-validation" novalidate>
