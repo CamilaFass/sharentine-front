@@ -5,7 +5,7 @@ import ProfileCard from '../../components/profileCard/ProfileCard';
 function Profile(props) {
   return (
     <div>
-      <ProfileCard />
+      <ProfileCard {...props} />
     </div>
   );
 }

@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProfileCard.css';
+import api from '../../apis/';
 
-function Profile(props) {
-  const [state, setState] = useState({ user: {}, token: '' });
+function ProfileCard(props) {
+  const [state, setState] = useState({
+    name: '',
+    lastName: '',
+    location: '',
+    image: '',
+    loading: false,
+    error: ''
+  });
 
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '""');
-    // console.log(storedUser);
-
-    setState(storedUser !== '' ? { ...storedUser } : { user: {}, token: '' });
+  useEffect(function () {
+    setState({
+      name: props.user.name,
+      lastName: props.user.lastName,
+      location: props.user.location,
+      image: props.user.image
+    });
   }, []);
-
+  console.log(props);
   return (
     <div className="profile-card d-flex col-md-3">
       {/* <div className="container row"> */}
@@ -20,13 +30,20 @@ function Profile(props) {
         <div className="profile-sidebar">
           {/* <!-- SIDEBAR USERPIC --> */}
           <div className="profile-userpic">
-            <img src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg" />
+            <img
+              src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg"
+              alt="profile"
+            />
           </div>
           {/* <!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE --> */}
           <div className="profile-usertitle">
-            <div className="profile-usertitle-name">{state.user.name}</div>
-            <div className="profile-usertitle-location">São Paulo</div>
+            <div className="profile-usertitle-name">
+              {props.user.name} {props.user.lastName}
+            </div>
+            <div className="profile-usertitle-location">
+              {props.user.location}
+            </div>
           </div>
           {/* <!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS --> */}
@@ -56,4 +73,4 @@ function Profile(props) {
   );
 }
 
-export default Profile;
+export default ProfileCard;
