@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import Menu from './menu/Menu';
-import LoggedMenu from './loggedMenu/LoggedMenu';
-import Feed from '../routeComponent/feed/Feed';
-import Footer from './footer/Footer';
-import Logout from '../routeComponent/login/Logout';
-import SignUp from '../routeComponent/login/SignUp';
+import React, { useState, useEffect } from "react";
+import Menu from "./menu/Menu";
+import LoggedMenu from "./loggedMenu/LoggedMenu";
+import Feed from "../routeComponent/feed/Feed";
+import Footer from "./footer/Footer";
+import Logout from "../routeComponent/login/Logout";
+import SignUp from "../routeComponent/login/SignUp";
 // import Login from '../routeComponent/login/Login';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import PrivateRoute from '../routeComponent/login/PrivateRoute';
-import Home from '../routeComponent/home/Home';
-import Profile from '../routeComponent/profile/Profile';
-import ProfileEdit from '../routeComponent/profile/ProfileEdit';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import PrivateRoute from "../routeComponent/login/PrivateRoute";
+import Home from "../routeComponent/home/Home";
+import Profile from "../routeComponent/profile/Profile";
+import ProfileEdit from "../routeComponent/profile/ProfileEdit";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [state, setState] = useState({ user: {}, token: '' });
+  const [state, setState] = useState({ user: {}, token: "" });
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '""');
+    const storedUser = JSON.parse(localStorage.getItem("loggedInUser") || '""');
     console.log(storedUser);
 
-    setState(storedUser !== '' ? { ...storedUser } : { user: {}, token: '' });
+    setState(storedUser !== "" ? { ...storedUser } : { user: {}, token: "" });
   }, []);
 
   const handleLoginSubmit = (data) => {
@@ -32,7 +32,7 @@ function App() {
     // Limpa o state do componente para deslogar o usuario
     setState({
       user: {},
-      token: ''
+      token: "",
     });
   };
 
@@ -42,26 +42,10 @@ function App() {
         <div>
           <LoggedMenu />
           <Switch>
-            <PrivateRoute
-              exact
-              path="/logout"
-              component={Logout}
-              user={state}
-              handleLogout={handleLogout}
-            />
+            <PrivateRoute exact path="/logout" component={Logout} user={state} handleLogout={handleLogout} />
             <PrivateRoute exact path="/feed" component={Feed} user={state} />
-            <PrivateRoute
-              exact
-              path="/profile"
-              component={Profile}
-              user={state}
-            />
-            <PrivateRoute
-              exact
-              path="/profile-edit"
-              component={ProfileEdit}
-              user={state}
-            />
+            <PrivateRoute exact path="/profile" component={Profile} user={state} />
+            <PrivateRoute exact path="/profile-edit" component={ProfileEdit} user={state} />
             {/* Como as rotas publicas só sāo renderizadas quando NĀO existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para a home */}
             <Route>
               <Redirect to="/feed" />
