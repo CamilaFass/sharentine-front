@@ -4,27 +4,6 @@ import './ProfileCard.css';
 import api from '../../apis/';
 
 function ProfileCard(props) {
-  const [state, setState] = useState({
-    name: '',
-    lastName: '',
-    location: '',
-    image: '',
-    loading: false,
-    error: ''
-  });
-
-  useEffect(
-    function () {
-      setState({
-        name: props.user.name,
-        lastName: props.user.lastName,
-        location: props.user.location,
-        image: props.user.image
-      });
-    },
-    [props]
-  );
-  console.log(props);
   return (
     <div className="profile-card d-flex col-md-3">
       {/* <div className="container row"> */}
