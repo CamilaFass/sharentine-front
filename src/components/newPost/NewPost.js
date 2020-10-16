@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../apis/";
 import "./NewPost.css";
@@ -9,40 +10,76 @@ const NewPost = (props) => {
   const [state, setState] = useState({
     title: "",
     content: "",
+    attachment: "",
+    image: "",
     loading: false,
     error: "",
   });
 
   const handleChange = (event) => {
-    console.log(props);
-    setState({
+    if (event.currentTarget.files) {
+      return setState({ ...state, [event.currentTarget.name]: event.currentTarget.files[0] });
+    }
+    return setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
-    console.log(state);
+  };
+
+  const handleFileUpload = async (file) => {
+    try {
+      // Criando um arquivo programaticamente
+      const uploadData = new FormData();
+
+      uploadData.append("attachment", file);
+
+      const response = await api.post("/upload", uploadData);
+
+      console.log("URL Image ->", response.data.image);
+
+      return response.data.image;
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleSubmit = async (event) => {
     setState({ ...state, loading: true });
-
     try {
       // Impedir comportamento padrāo do formulário
       event.preventDefault();
 
-      // Disparar a requisiçāo manualmente através do React
-      const response = await api.post(`/post/${props.user._id}`, state);
-      console.log(response);
+      console.log("Estado ->", state);
 
-      // Cancela o estado de loading
-      setState({title: "", content: "", loading: false, error: ""});
-
-      // Navega programaticamente para a lista de projetos
-      history.push("/feed");
+      const fileUrl = await handleFileUpload(state.attachment);
+      console.log("URL recebida ->", fileUrl);
+      setState({ ...state, image: fileUrl });
     } catch (err) {
       console.error(err);
       setState({ ...state, loading: false, error: err.message });
     }
   };
+
+  useEffect(
+    function () {
+      (async function () {
+        try {
+          const response = await api.post(`/post/${props.user._id}`, state);
+          console.log(response);
+
+          // Cancela o estado de loading
+          setState({ title: "", content: "", loading: false, error: "", attachment: "" });
+
+          // Navega programaticamente para a lista de projetos
+          history.push("/");
+        } catch (err) {
+          console.error(err);
+          setState({ ...state, loading: false, error: err.message });
+        }
+      })();
+    },
+    [state.image]
+  );
 
   return (
     <div className="gedf-main">
@@ -118,7 +155,14 @@ const NewPost = (props) => {
               <div className="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                 <div className="form-group">
                   <div className="custom-file">
-                    <input type="file" className="custom-file-input" id="customFile" style={{ fontFamily: "Roboto" }} />
+                    <input
+                      type="file"
+                      className="custom-file-input"
+                      id="customFile"
+                      style={{ fontFamily: "Roboto" }}
+                      name="attachment"
+                      onChange={handleChange}
+                    />
                     <label className="custom-file-label" htmlFor="customFile">
                       Upload image
                     </label>

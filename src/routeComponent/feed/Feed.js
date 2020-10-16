@@ -20,8 +20,7 @@ const Feed = (props) => {
         const response = await api.get("/post");
         console.log(response);
 
-        setState({ ...state, loading: false, projects: [...response.data] });
-
+        setState({ ...state, loading: false, posts: [...response.data] });
       } catch (err) {
         console.error(err);
         setState({ ...state, loading: false, error: err.message });
@@ -34,10 +33,12 @@ const Feed = (props) => {
       <NewPost {...props} />
 
       {state.posts.map((item) => {
-        return <PostCard userImage={item.userId.image} name={item.userId.name} image={item.image} title={item.title} content={item.content} />;
+        return <PostCard userImage={item.userId.image} name={item.userId.name} image={item.image} title={item.title} content={item.content} key={item._id} postUserId={item.userId._id} activeUserId={props.user._id} postId={item._id}/>;
       })}
     </div>
   );
 };
 
 export default Feed;
+
+
