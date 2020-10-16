@@ -18,7 +18,10 @@ const NewPost = (props) => {
 
   const handleChange = (event) => {
     if (event.currentTarget.files) {
-      return setState({ ...state, [event.currentTarget.name]: event.currentTarget.files[0] });
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
     }
     return setState({
       ...state,
@@ -68,7 +71,13 @@ const NewPost = (props) => {
           console.log(response);
 
           // Cancela o estado de loading
-          setState({ title: "", content: "", loading: false, error: "", attachment: "" });
+          setState({
+            title: "",
+            content: "",
+            loading: false,
+            error: "",
+            attachment: "",
+          });
 
           // Navega programaticamente para a lista de projetos
           history.push("/");
@@ -86,7 +95,11 @@ const NewPost = (props) => {
       {/* <!--- \\\\\\\Post--> */}
       <div className="card gedf-card">
         <div className="card-header">
-          <ul className="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+          <ul
+            className="nav nav-tabs card-header-tabs"
+            id="myTab"
+            role="tablist"
+          >
             <li className="nav-item">
               <a
                 className="nav-link active"
@@ -96,7 +109,7 @@ const NewPost = (props) => {
                 role="tab"
                 aria-controls="posts"
                 aria-selected="true"
-                style={{ fontFamily: "Roboto" }}
+                style={{ fontFamily: "Roboto", color: "#3e4f46" }}
               >
                 Share Something
               </a>
@@ -110,7 +123,7 @@ const NewPost = (props) => {
                 aria-controls="images"
                 aria-selected="false"
                 href="#images"
-                style={{ fontFamily: "Roboto" }}
+                style={{ fontFamily: "Roboto", color: "#3e4f46" }}
               >
                 Images
               </a>
@@ -120,7 +133,12 @@ const NewPost = (props) => {
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="tab-content" id="myTabContent">
-              <div className="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+              <div
+                className="tab-pane fade show active"
+                id="posts"
+                role="tabpanel"
+                aria-labelledby="posts-tab"
+              >
                 <div className="form-group">
                   <label className="sr-only" htmlFor="title">
                     post title
@@ -152,7 +170,12 @@ const NewPost = (props) => {
                   ></textarea>
                 </div>
               </div>
-              <div className="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+              <div
+                className="tab-pane fade"
+                id="images"
+                role="tabpanel"
+                aria-labelledby="images-tab"
+              >
                 <div className="form-group">
                   <div className="custom-file">
                     <input
@@ -173,7 +196,11 @@ const NewPost = (props) => {
             </div>
             <div className="btn-toolbar justify-content-between">
               <div className="btn-group">
-                <button type="submit" className="btn sharebutton" style={{ fontFamily: "Roboto" }}>
+                <button
+                  type="submit"
+                  className="btn sharebutton"
+                  style={{ fontFamily: "Roboto" }}
+                >
                   share
                 </button>
               </div>
