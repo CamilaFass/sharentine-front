@@ -30,10 +30,7 @@ function ProfileCard(props) {
         <div className="profile-sidebar">
           {/* <!-- SIDEBAR USERPIC --> */}
           <div className="profile-userpic">
-            <img
-              src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg"
-              alt="profile"
-            />
+            <img src={props.user.image} alt="profile" />
           </div>
           {/* <!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE --> */}
