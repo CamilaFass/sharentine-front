@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ProfileCard from '../../components/profileCard/ProfileCard';
 import api from '../../apis/';
+import { useHistory } from 'react-router-dom';
 
 function ProfileEdit(props) {
+  const history = useHistory();
   const [state, setState] = useState({
     name: '',
     lastName: '',
     location: '',
     image: '',
+    attachment: '',
     loading: false,
     error: ''
   });
@@ -21,12 +24,42 @@ function ProfileEdit(props) {
     });
   }, []);
 
+  const handleChange = (event) => {
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.value
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    setState({ ...state, loading: true });
+    console.log(state, 'testeee');
+    try {
+      // Impedir comportamento padrāo do formulário
+      event.preventDefault();
+
+      // Disparar a requisiçāo manualmente através do React
+      const response = await api.patch(`/profile/${props.user._id}`, state);
+      console.log(response);
+
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      loggedInUser.user = { ...loggedInUser.user, ...state };
+      localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+      console.log('ATUALIZANDO O LOCAL STORAGE', loggedInUser);
+      // Navega programaticamente para a lista de projetos
+      history.push('/profile');
+    } catch (err) {
+      console.error(err);
+      setState({ ...state, error: err.message });
+    }
+  };
+
   return (
     <div className="d-flex mt-3">
       <ProfileCard {...props} />
       <div className="col-md-9">
         <div className="profile-content">
-          <form className="needs-validation" noValidate>
+          <form className="needs-validation" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="validationTooltip03">Change Photo</label>
@@ -40,8 +73,10 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="name"
                   id="validationTooltip01"
-                  value={props.user.name}
+                  value={state.name}
+                  onChange={handleChange}
                   required
                 />
                 <div className="valid-tooltip">Looks good!</div>
@@ -51,8 +86,10 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="lastName"
                   id="validationTooltip02"
-                  value={props.user.lastName}
+                  value={state.lastName}
+                  onChange={handleChange}
                   required
                 />
                 <div className="valid-tooltip">Looks good!</div>
@@ -64,8 +101,10 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="location"
                   id="validationTooltip03"
-                  value={props.user.location}
+                  value={state.location}
+                  onChange={handleChange}
                   required
                 />
                 <div className="invalid-tooltip">

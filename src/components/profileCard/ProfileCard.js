@@ -13,14 +13,17 @@ function ProfileCard(props) {
     error: ''
   });
 
-  useEffect(function () {
-    setState({
-      name: props.user.name,
-      lastName: props.user.lastName,
-      location: props.user.location,
-      image: props.user.image
-    });
-  }, []);
+  useEffect(
+    function () {
+      setState({
+        name: props.user.name,
+        lastName: props.user.lastName,
+        location: props.user.location,
+        image: props.user.image
+      });
+    },
+    [props]
+  );
   console.log(props);
   return (
     <div className="profile-card d-flex col-md-3">
@@ -30,10 +33,7 @@ function ProfileCard(props) {
         <div className="profile-sidebar">
           {/* <!-- SIDEBAR USERPIC --> */}
           <div className="profile-userpic">
-            <img
-              src="http://res.cloudinary.com/dbthudmai/image/upload/v1601056338/books/Vic.jpg.jpg"
-              alt="profile"
-            />
+            <img src={props.user.image} alt="profile" />
           </div>
           {/* <!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE --> */}
