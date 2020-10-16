@@ -37,6 +37,28 @@ function ProfileEdit(props) {
     });
   };
 
+  const handleFileUpload = async (event) => {
+    event.preventDefault();
+    console.log('CHEGUEI ATE AQUI');
+    try {
+      // Criando um arquivo programaticamente
+      const uploadData = new FormData();
+
+      uploadData.append('attachment', state.attachment);
+
+      const response = await api.post('/upload', uploadData);
+
+      console.log('URL Image ->', response.data.image);
+
+      return setState({
+        ...state,
+        image: response.data.image
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleSubmit = async (event) => {
     setState({ ...state, loading: true });
     console.log(state, 'testeee');
@@ -66,14 +88,27 @@ function ProfileEdit(props) {
       <ProfileCard {...props} />
       <div className="col-md-9">
         <div className="profile-content">
-          <form className="needs-validation" onSubmit={handleSubmit}>
+          <form className="needs-validation" onSubmit={handleFileUpload}>
             <div className="form-row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="validationTooltip03">Change Photo</label>
-                <input type="file" className="form-control" />
-                <button className="btn btn-success btn-sm mt-2">Upload</button>
+                <input
+                  type="file"
+                  className="form-control"
+                  onChange={handleChange}
+                  name="attachment"
+                />
+                <button
+                  className="btn btn-success btn-sm mt-2"
+                  type="button"
+                  onClick={handleFileUpload}
+                >
+                  Upload
+                </button>
               </div>
             </div>
+          </form>
+          <form className="needs-validation" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="validationTooltip01">First name</label>
@@ -123,7 +158,7 @@ function ProfileEdit(props) {
               <button className="btn btn-success btn-sm" type="submit">
                 Save Changes
               </button>
-              <button className="btn btn-danger btn-sm" type="submit">
+              <button className="btn btn-danger btn-sm" type="button">
                 Delete Account
               </button>
             </div>
