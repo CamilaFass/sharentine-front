@@ -39,6 +39,10 @@ const Feed = (props) => {
             image={item.image}
             title={item.title}
             content={item.content}
+            key={item._id}
+            postUserId={item.userId._id}
+            activeUserId={props.user._id}
+            postId={item._id}
           />
         );
       })}

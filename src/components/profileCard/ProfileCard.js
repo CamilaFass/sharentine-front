@@ -13,14 +13,17 @@ function ProfileCard(props) {
     error: ''
   });
 
-  useEffect(function () {
-    setState({
-      name: props.user.name,
-      lastName: props.user.lastName,
-      location: props.user.location,
-      image: props.user.image
-    });
-  }, []);
+  useEffect(
+    function () {
+      setState({
+        name: props.user.name,
+        lastName: props.user.lastName,
+        location: props.user.location,
+        image: props.user.image
+      });
+    },
+    [props]
+  );
   console.log(props);
   return (
     <div className="profile-card d-flex col-md-3">
