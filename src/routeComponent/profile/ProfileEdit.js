@@ -25,7 +25,13 @@ function ProfileEdit(props) {
   }, []);
 
   const handleChange = (event) => {
-    setState({
+    if (event.currentTarget.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0]
+      });
+    }
+    return setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value
     });
@@ -45,6 +51,7 @@ function ProfileEdit(props) {
       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
       loggedInUser.user = { ...loggedInUser.user, ...state };
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+      props.updateUserState();
       console.log('ATUALIZANDO O LOCAL STORAGE', loggedInUser);
       // Navega programaticamente para a lista de projetos
       history.push('/profile');

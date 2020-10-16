@@ -16,11 +16,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [state, setState] = useState({ user: {}, token: '' });
 
-  useEffect(() => {
+  function updateUserState() {
     const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '""');
     console.log(storedUser);
 
     setState(storedUser !== '' ? { ...storedUser } : { user: {}, token: '' });
+  }
+
+  useEffect(() => {
+    updateUserState();
   }, []);
 
   const handleLoginSubmit = (data) => {
@@ -61,6 +65,7 @@ function App() {
               path="/profile-edit"
               component={ProfileEdit}
               user={state}
+              updateUserState={updateUserState}
             />
             {/* Como as rotas publicas só sāo renderizadas quando NĀO existe um usuario logado, as rotas das mesmas nāo irāo dar match com nenhum componente. Para resolver isso, criamos uma rota sem path para dar match com todas as rotas que "sobrarem" e redirecionamos para a home */}
             <Route>
