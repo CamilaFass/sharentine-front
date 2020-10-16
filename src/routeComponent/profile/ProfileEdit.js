@@ -40,6 +40,7 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="name"
                   id="validationTooltip01"
                   value={props.user.name}
                   required
@@ -51,6 +52,7 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="lastName"
                   id="validationTooltip02"
                   value={props.user.lastName}
                   required
@@ -64,6 +66,7 @@ function ProfileEdit(props) {
                 <input
                   type="text"
                   className="form-control"
+                  name="location"
                   id="validationTooltip03"
                   value={props.user.location}
                   required
