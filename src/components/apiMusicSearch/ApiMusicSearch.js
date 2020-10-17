@@ -21,7 +21,7 @@ function ApiMusicSearch() {
         <div className="d-flex justify-content-center m-5 ">
           <div class="cntr">
             <div class="cntr-innr">
-              <p style={{ fontFamily: "Gafata" }}>
+              <p style={{ fontFamily: "Gafata", fontSize: "20px" }}>
                 What song or album are you looking for?
               </p>
               <label class="search" for="inpt_search">

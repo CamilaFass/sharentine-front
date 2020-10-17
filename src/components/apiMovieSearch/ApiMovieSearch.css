@@ -13,9 +13,9 @@
     color: #333;
 } */
 
-p {
+/* p {
   font-size: 1.6rem;
-}
+} */
 
 small {
   font-size: 1.2rem;
@@ -27,7 +27,8 @@ small {
   padding: 40px;
 }
 
-.title {
+.cardtitle {
+  /*.title*/
   font-size: 4.4rem;
   text-align: center;
 }
@@ -51,7 +52,7 @@ small {
   margin-bottom: 2rem;
 }
 
-.button {
+.buttonsearch {
   background-color: #3e4f46;
   color: white;
   padding: 0.5rem 1rem;
@@ -83,7 +84,7 @@ small {
   margin-top: 4rem;
 }
 
-.card {
+.cardmovie {
   padding: 2rem 4rem;
   border-radius: 10px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
@@ -91,10 +92,10 @@ small {
   background-color: transparent;
 }
 
-.card--title {
+/* .card--title {
   margin-bottom: 0.5rem;
   font-size: 3.2rem;
-}
+} */
 
 .card--image {
   margin: 0 auto;

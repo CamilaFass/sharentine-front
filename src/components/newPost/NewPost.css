@@ -8,12 +8,21 @@
 }
 
 .sharebutton {
-  border-radius: 10px !important;
+  /* border-radius: 10px !important;
   border: 1px solid #3e4f46 !important;
   background-color: #addbc1 !important;
-  color: white !important;
-}
+  color: white !important; */
 
+  background-color: #3e4f46 !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  margin-top: 10px !important;
+  border: 1px solid #3e4f46 !important;
+  border-radius: 20px !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: background-color 250ms !important;
+}
 
 @media (min-width: 992px) {
   .gedf-main {
