@@ -12,6 +12,7 @@ import Home from '../routeComponent/home/Home';
 import Profile from '../routeComponent/profile/Profile';
 import ProfileEdit from '../routeComponent/profile/ProfileEdit';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ApiBookSearch from './apiSearchPage/ApiBookSearch';
 
 function App() {
   const [state, setState] = useState({ user: {}, token: '' });
@@ -64,6 +65,13 @@ function App() {
               exact
               path="/profile-edit"
               component={ProfileEdit}
+              user={state}
+              updateUserState={updateUserState}
+            />
+            <PrivateRoute
+              exact
+              path="/book-search"
+              component={ApiBookSearch}
               user={state}
               updateUserState={updateUserState}
             />
