@@ -15,7 +15,9 @@ export default function SearchMovies() {
   const searchMovies = async (e) => {
     e.preventDefault(); // e = event
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=false`;
+    const API_KEY = process.env.TMDB_API_KEY;
+
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const res = await fetch(url);
