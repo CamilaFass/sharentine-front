@@ -7,6 +7,11 @@
   margin-top: 0.97rem;
 }
 
+.card-link {
+  border: none;
+  background-color: #f8f8f8;
+}
+
 @media (min-width: 992px) {
   .gedf-main {
     padding-left: 4rem;
