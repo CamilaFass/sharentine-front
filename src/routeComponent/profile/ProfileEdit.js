@@ -83,6 +83,30 @@ function ProfileEdit(props) {
     }
   };
 
+  const handleDelete = async (event) => {
+    setState({ ...state, loading: true });
+    try {
+      event.preventDefault();
+
+      const response = await api.delete(
+        `/post/${props.activeUserId}/${props.postId}`,
+        `/profile/${props.user._id}`,
+        state
+      );
+      console.log(response);
+      history.push('/');
+    } catch (err) {
+      console.error(err);
+      setState({ ...state, error: err.message });
+    }
+    localStorage.removeItem('loggedInUser');
+    console.log(props);
+    // props.handleDelete();
+    props.history.push('/');
+    // Força um reload na página para limpar a memória do roteador
+    props.history.go();
+  };
+
   return (
     <div className="d-flex mt-3">
       <ProfileCard {...props} />
@@ -158,7 +182,11 @@ function ProfileEdit(props) {
               <button className="btn btn-success btn-sm" type="submit">
                 Save Changes
               </button>
-              <button className="btn btn-danger btn-sm" type="button">
+              <button
+                className="btn btn-danger btn-sm"
+                type="button"
+                onClick={handleDelete}
+              >
                 Delete Account
               </button>
             </div>
