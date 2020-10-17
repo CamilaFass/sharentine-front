@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import './LoggedMenu.css';
+import "./LoggedMenu.css";
 
 const LoggedMenu = () => {
   return (
@@ -29,14 +29,14 @@ const LoggedMenu = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/movie-search">
               Movies/Series
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/music-search">
               Music
-            </a>
+            </Link>
           </li>
         </ul>
 
