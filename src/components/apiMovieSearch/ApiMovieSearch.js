@@ -47,7 +47,11 @@ export default function SearchMovies() {
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                     />
-                    <buton className="button" type="submit">
+                    <buton
+                      className="button"
+                      type="submit"
+                      style={{ fontFamily: "Roboto" }}
+                    >
                       Search
                     </buton>
                   </label>
