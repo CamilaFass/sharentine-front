@@ -1,9 +1,9 @@
-import React from 'react';
-import LoggedMenu from '../loggedMenu/LoggedMenu';
-import Footer from '../footer/Footer';
-import './ApiBookSearch.css';
-import api from '../../apis/';
-import BookImg from './undraw_book_lover_mkck.svg';
+import React from "react";
+import LoggedMenu from "../loggedMenu/LoggedMenu";
+import Footer from "../footer/Footer";
+import "./ApiBookSearch.css";
+import api from "../../apis/";
+import BookImg from "./undraw_book_lover_mkck.svg";
 
 // animation search
 // $('#inpt_search').on('focus', function () {
@@ -21,10 +21,12 @@ function ApiBookSearch() {
         <div className="d-flex justify-content-center m-5 ">
           <div class="cntr">
             <div class="cntr-innr">
+              <p style={{ fontFamily: "Gafata" }}>
+                What book are you looking for?
+              </p>
               <label class="search" for="inpt_search">
                 <input id="inpt_search" type="text" />
               </label>
-              <p>What book are you looking for?</p>
             </div>
           </div>
         </div>
