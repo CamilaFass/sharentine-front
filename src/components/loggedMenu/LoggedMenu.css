@@ -5,3 +5,7 @@
 .menu-brand {
   color: #3e4f46 !important;
 }
+
+.nav-item img {
+  margin-right: 5px;
+}

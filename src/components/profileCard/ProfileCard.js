@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProfileCard.css';
 import api from '../../apis/';
+import userIcon from './user-icon.png';
 
 function ProfileCard(props) {
   return (
@@ -26,22 +27,19 @@ function ProfileCard(props) {
           </div>
           {/* <!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS --> */}
-          <div className="profile-userbuttons">
+          {/* <div className="profile-userbuttons">
             <button type="button" className="btn btn-success btn-sm">
               Follow
             </button>
-          </div>
+          </div> */}
           {/* <!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU --> */}
-          <div className="profile-usermenu ">
-            <ul className="nav justify-content-center">
-              <li>
-                <Link to="/profile-edit">
-                  <i className="glyphicon glyphicon-user"></i>
-                  Account Settings{' '}
-                </Link>
-              </li>
-            </ul>
+          <div className="profile-usermenu d-flex justify-content-center ">
+            <Link className="profile-usermenu-settings" to="/profile-edit">
+              <img src={userIcon} alt="user icon" width="30px" heigth="30px" />
+              <i className="glyphicon glyphicon-user"></i>
+              Account Settings{' '}
+            </Link>
           </div>
           {/* <!-- END MENU --> */}
         </div>

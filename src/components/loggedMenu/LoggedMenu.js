@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logoutIcon from './logout-icon.png';
 
-import "./LoggedMenu.css";
+import './LoggedMenu.css';
 
 const LoggedMenu = () => {
   return (
@@ -48,6 +49,12 @@ const LoggedMenu = () => {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/logout">
+              <img
+                src={logoutIcon}
+                alt="logout icon"
+                width="20px"
+                height="20px"
+              />
               Logout
             </Link>
           </li>
