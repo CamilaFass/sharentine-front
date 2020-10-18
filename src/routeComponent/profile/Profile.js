@@ -35,7 +35,6 @@ function Profile(props) {
 
       <div className="d-flex col-md-9 flex-column align-items-center">
         {state.posts.map((item) => {
-          console.log('TESTANDO', item.userId);
           return (
             <PostCard
               userImage={props.user.image}
@@ -47,6 +46,7 @@ function Profile(props) {
               postUserId={item.userId}
               activeUserId={props.user._id}
               postId={item._id}
+              comments={item.comments}
             />
           );
         })}
