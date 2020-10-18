@@ -26,8 +26,14 @@ function ApiMusicSearch() {
               </p>
               <label class="search" for="inpt_search">
                 <input id="inpt_search" type="text" />
+                <buton
+                      className="buttonsearch"
+                      type="submit"
+                      style={{ fontFamily: "Roboto" }}
+                    >
+                      Search
+                    </buton>
               </label>
-              {/* <p>What song or album are you looking for?</p> */}
             </div>
           </div>
         </div>
