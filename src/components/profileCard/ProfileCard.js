@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import './ProfileCard.css';
 import api from '../../apis/';
 import userIcon from './user-icon.png';
+import './ProfileCard.css';
 
 function ProfileCard(props) {
   return (
-    <div className="profile-card d-flex col-md-3">
+    <div className="profile-card d-flex col-md-3 justify-content-center pl-2 pt-5">
       {/* <div className="container row"> */}
       {/* <div className="row profile"> */}
       <div className="">

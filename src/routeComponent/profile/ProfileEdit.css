@@ -104,7 +104,23 @@ body {
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
-  background: #fff;
+  /* background-color: #f7f7f7; */
+  padding: 30px;
   min-height: 460px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 100px;
+  border: solid 1px #eeeded;
+}
+
+.save-changes {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProfileCard from '../../components/profileCard/ProfileCard';
 import api from '../../apis/';
 import { useHistory } from 'react-router-dom';
+import './ProfileEdit.css';
 
 function ProfileEdit(props) {
   const history = useHistory();
@@ -105,7 +106,7 @@ function ProfileEdit(props) {
   };
 
   return (
-    <div className="d-flex mt-3">
+    <div className="d-flex t-3">
       <ProfileCard {...props} />
       <div className="col-md-9">
         <div className="profile-content">
@@ -175,13 +176,13 @@ function ProfileEdit(props) {
                 </div>
               </div>
             </div>
-            <div className="d-flex justify-content-around">
+            <div className="save-changes">
               <button className="btn btn-success btn-sm" type="submit">
                 Save Changes
               </button>
             </div>
           </form>
-          <form className="needs-validation" onSubmit={handleDelete}>
+          <form className="delete-button" onSubmit={handleDelete}>
             <div>
               <button
                 className="btn btn-danger btn-sm"
