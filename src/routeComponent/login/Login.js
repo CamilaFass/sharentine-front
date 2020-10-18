@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import api from '../../apis/';
-import InitialImg from './initialimg.svg';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import api from "../../apis/";
+import InitialImg from "./initialimg.svg";
 
-import './SignUp.css';
+import "./SignUp.css";
 
-import LoadingButton from '../../components/loadingButton/LoadingButton';
+import LoadingButton from "../../components/loadingButton/LoadingButton";
 
 function Login(props) {
   const [state, setState] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     loading: false,
-    error: ''
+    error: "",
   });
 
   const handleChange = (event) => {
     setState({
       ...state,
-      [event.currentTarget.name]: event.currentTarget.value
+      [event.currentTarget.name]: event.currentTarget.value,
     });
     console.log(state);
   };
@@ -32,7 +32,7 @@ function Login(props) {
       event.preventDefault();
 
       // Disparar a requisiçāo manualmente através do React
-      const response = await api.post('/login', state);
+      const response = await api.post("/login", state);
       console.log(response.data);
 
       // Atualiza o state do componente pai
@@ -40,10 +40,10 @@ function Login(props) {
 
       // Guarda os dados do usuario no computador do usuario
       localStorage.setItem(
-        'loggedInUser',
+        "loggedInUser",
         JSON.stringify({
           user: { ...response.data.user },
-          token: response.data.token
+          token: response.data.token,
         })
       );
 
@@ -51,7 +51,7 @@ function Login(props) {
       setState({ loading: false });
 
       // Navega programaticamente para a lista de projetos
-      props.history.push('/feed');
+      props.history.push("/feed");
       // Força um reload na página para limpar a memória do roteador
       props.history.go();
     } catch (err) {
@@ -62,7 +62,7 @@ function Login(props) {
 
   return (
     <div className="SignUp d-flex">
-      <div className="col-7 d-flex justify-content-center">
+      <div className="col-md-7 d-flex justify-content-center">
         <img
           className="img-form-signup w-100 justify-content-center"
           src={InitialImg}
@@ -71,12 +71,12 @@ function Login(props) {
         />
       </div>
       <div
-        className="div-signup d-flex justify-content-center align-content-center flex-wrap w-100"
+        className="div-signup col-md-5 d-flex justify-content-center align-content-center flex-wrap w-100"
         id="form"
       >
         <section className="section-form-signup-rectangle justify-content-center d-flex align-content-center flex-wrap">
           <h1 className="sign-up-h1">
-            <span className="span-azul" style={{ fontFamily: 'Roboto' }}>
+            <span className="span-azul" style={{ fontFamily: "Roboto" }}>
               Welcome to Sharentine!
             </span>
           </h1>
@@ -84,7 +84,7 @@ function Login(props) {
             className="d-flex flex-column text-center"
             onSubmit={handleSubmit}
           >
-            <label htmlFor="signupEmailInput" style={{ fontFamily: 'Gafata' }}>
+            <label htmlFor="signupEmailInput" style={{ fontFamily: "Gafata" }}>
               Email
             </label>
             <input
@@ -99,7 +99,7 @@ function Login(props) {
 
             <label
               htmlFor="signUpPasswordInput"
-              style={{ fontFamily: 'Gafata' }}
+              style={{ fontFamily: "Gafata" }}
             >
               Password
             </label>
@@ -120,13 +120,13 @@ function Login(props) {
               <button
                 type="submit"
                 className="btn"
-                style={{ fontFamily: 'Gafata' }}
+                style={{ fontFamily: "Gafata" }}
               >
                 <strong>Log In</strong>
               </button>
             )}
           </form>
-          <Link to="/signup" style={{ fontFamily: 'Gafata', color: '#3e4f46' }}>
+          <Link to="/signup" style={{ fontFamily: "Gafata", color: "#3e4f46" }}>
             Create New Account
           </Link>
         </section>

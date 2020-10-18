@@ -12,9 +12,9 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <i className="fab fa-github"></i> <br />
-          <p>
+          {/* <p>
             <small>Sharentine 2020</small>
-          </p>
+          </p> */}
         </a>
       </span>
     </div>

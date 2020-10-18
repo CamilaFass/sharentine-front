@@ -14,9 +14,9 @@ body {
   font: 13px monospace;
   color: @txt-color;
 } */
-p {
+/* p {
   margin-top: 30px;
-}
+} */
 .cntr {
   display: table;
   width: 100%;
@@ -43,7 +43,7 @@ p {
   cursor: text;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 3px;
     height: 20px;
