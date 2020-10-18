@@ -18,7 +18,9 @@ function Profile(props) {
       // console.log('TESTANDO POST', state);
       try {
         const response = await api.get(`/post/${props.user._id}`);
-
+        response.data.posts.sort((a, b) => {
+          return new Date(b.updatedAt) - new Date(a.updatedAt);
+        });
         setState({ ...state, loading: false, posts: [...response.data.posts] });
       } catch (err) {
         console.error(err);

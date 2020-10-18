@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
-import './Feed.css';
-import PostCard from '../../components/postCard/PostCard';
-import NewPost from '../../components/newPost/NewPost';
-import api from '../../apis/';
+import React, { useState, useEffect } from "react";
+import "./Feed.css";
+import PostCard from "../../components/postCard/PostCard";
+import NewPost from "../../components/newPost/NewPost";
+import api from "../../apis/";
 
 const Feed = (props) => {
   const [state, setState] = useState({
     posts: [],
     loading: false,
-    error: ''
+    error: "",
   });
 
   useEffect(function () {
@@ -17,9 +17,11 @@ const Feed = (props) => {
 
     (async function () {
       try {
-        const response = await api.get('/post');
-        console.log(response);
-
+        const response = await api.get("/post");
+        response.data.sort((a, b) => {
+          return new Date(b.updatedAt) - new Date(a.updatedAt);
+        });
+        console.log("Response from /post =>", response)
         setState({ ...state, loading: false, posts: [...response.data] });
       } catch (err) {
         console.error(err);
@@ -43,6 +45,7 @@ const Feed = (props) => {
             postUserId={item.userId._id}
             activeUserId={props.user._id}
             postId={item._id}
+            comments={item.comments}
           />
         );
       })}
