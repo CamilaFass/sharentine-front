@@ -46,6 +46,7 @@ function Profile(props) {
               postUserId={item.userId}
               activeUserId={props.user._id}
               postId={item._id}
+              comments={item.comments}
             />
           );
         })}
