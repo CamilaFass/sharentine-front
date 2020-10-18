@@ -39,7 +39,7 @@ function ProfileEdit(props) {
 
   const handleFileUpload = async (event) => {
     event.preventDefault();
-    console.log('CHEGUEI ATE AQUI');
+    // console.log('CHEGUEI ATE AQUI');
     try {
       // Criando um arquivo programaticamente
       const uploadData = new FormData();
@@ -61,7 +61,6 @@ function ProfileEdit(props) {
 
   const handleSubmit = async (event) => {
     setState({ ...state, loading: true });
-    console.log(state, 'testeee');
     try {
       // Impedir comportamento padrāo do formulário
       event.preventDefault();
@@ -74,7 +73,6 @@ function ProfileEdit(props) {
       loggedInUser.user = { ...loggedInUser.user, ...state };
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
       props.updateUserState();
-      console.log('ATUALIZANDO O LOCAL STORAGE', loggedInUser);
       // Navega programaticamente para a lista de projetos
       history.push('/profile');
     } catch (err) {
@@ -89,18 +87,17 @@ function ProfileEdit(props) {
       event.preventDefault();
 
       const response = await api.delete(
-        `/post/${props.activeUserId}/${props.postId}`,
-        `/profile/${props.user._id}`,
-        state
+        // `/post/${props.activeUserId}/${props.postId}`,
+        `/profile/${props.user._id}`
       );
-      console.log(response);
+      // console.log(response);
       history.push('/');
     } catch (err) {
       console.error(err);
       setState({ ...state, error: err.message });
     }
     localStorage.removeItem('loggedInUser');
-    console.log(props);
+    // console.log(props);
     // props.handleDelete();
     props.history.push('/');
     // Força um reload na página para limpar a memória do roteador
@@ -182,6 +179,10 @@ function ProfileEdit(props) {
               <button className="btn btn-success btn-sm" type="submit">
                 Save Changes
               </button>
+            </div>
+          </form>
+          <form className="needs-validation" onSubmit={handleDelete}>
+            <div>
               <button
                 className="btn btn-danger btn-sm"
                 type="button"
