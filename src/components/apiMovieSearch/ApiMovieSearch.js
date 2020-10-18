@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import LoggedMenu from "../loggedMenu/LoggedMenu";
-import Footer from "../footer/Footer";
-import "./ApiMovieSearch.css";
-import api from "../../apis/";
-import MovieImg from "./MovieImg.svg";
-import MovieCard from "./MovieCard";
+import React, { useState } from 'react';
+import LoggedMenu from '../loggedMenu/LoggedMenu';
+import Footer from '../footer/Footer';
+import './ApiMovieSearch.css';
+import api from '../../apis/';
+import MovieImg from './MovieImg.svg';
+import MovieCard from './MovieCard';
 
 export default function SearchMovies() {
   //states- input query, movies
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   //create the state for movies, and update that state appropriate
   const [movies, setMovies] = useState([]);
 
@@ -31,15 +31,15 @@ export default function SearchMovies() {
   return (
     <>
       <form>
-        <div className="d-flex w-auto p-3 h-auto d-inline-block">
+        <div className="d-flex w-auto h-auto justify-content-center p-3 h-auto d-inline-block">
           <div className="d-flex row justify-content-center ">
             <div className="d-flex justify-content-center m-5 ">
-              <div class="cntr">
-                <div class="cntr-innr">
-                  <p style={{ fontFamily: "Gafata", fontSize: "20px" }}>
+              <div className="cntr">
+                <div className="cntr-innr">
+                  <p style={{ fontFamily: 'Gafata', fontSize: '20px' }}>
                     What movie are you looking for?
                   </p>
-                  <label class="search" for="inpt_search">
+                  <label class="search" htmlFor="inpt_search">
                     <input
                       id="inpt_search"
                       type="text"
@@ -50,7 +50,7 @@ export default function SearchMovies() {
                     <buton
                       className="buttonsearch"
                       type="submit"
-                      style={{ fontFamily: "Roboto" }}
+                      style={{ fontFamily: 'Roboto' }}
                     >
                       Search
                     </buton>

@@ -1,9 +1,9 @@
-import React from "react";
-import LoggedMenu from "../loggedMenu/LoggedMenu";
-import Footer from "../footer/Footer";
-import "./ApiMusicSearch.css";
-import api from "../../apis/";
-import MusicImg from "./MusicImg.svg";
+import React from 'react';
+import LoggedMenu from '../loggedMenu/LoggedMenu';
+import Footer from '../footer/Footer';
+import './ApiMusicSearch.css';
+import api from '../../apis/';
+import MusicImg from './MusicImg.svg';
 
 // animation search
 // $('#inpt_search').on('focus', function () {
@@ -16,12 +16,12 @@ import MusicImg from "./MusicImg.svg";
 
 function ApiMusicSearch() {
   return (
-    <div className="d-flex w-auto p-3 h-auto d-inline-block">
+    <div className="d-flex w-auto justify-content-center p-3 h-auto d-inline-block">
       <div className="d-flex row justify-content-center ">
         <div className="d-flex justify-content-center m-5 ">
           <div class="cntr">
             <div class="cntr-innr">
-              <p style={{ fontFamily: "Gafata", fontSize: "20px" }}>
+              <p style={{ fontFamily: 'Gafata', fontSize: '20px' }}>
                 What song or album are you looking for?
               </p>
               <label class="search" for="inpt_search">
