@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProfileCard from '../../components/profileCard/ProfileCard';
@@ -15,7 +16,6 @@ function Profile(props) {
     setState({ ...state, loading: true });
 
     (async function () {
-      // console.log('TESTANDO POST', state);
       try {
         const response = await api.get(`/post/${props.user._id}`);
         response.data.posts.sort((a, b) => {
