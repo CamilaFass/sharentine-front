@@ -5,15 +5,6 @@ import './ApiMusicSearch.css';
 import api from '../../apis/';
 import MusicImg from './MusicImg.svg';
 
-// animation search
-// $('#inpt_search').on('focus', function () {
-//   $(this).parent('label').addClass('active');
-// });
-
-// $('#inpt_search').on('blur', function () {
-//   if ($(this).val().length == 0) $(this).parent('label').removeClass('active');
-// });
-
 function ApiMusicSearch() {
   return (
     <div className="d-flex w-auto justify-content-center p-3 h-auto d-inline-block">
@@ -21,18 +12,20 @@ function ApiMusicSearch() {
         <div className="d-flex justify-content-center m-5 ">
           <div class="cntr">
             <div class="cntr-innr">
-              <p style={{ fontFamily: 'Gafata', fontSize: '20px' }}>
-                What song or album are you looking for?
-              </p>
-              <label class="search" for="inpt_search">
-                <input id="inpt_search" type="text" />
-                <buton
-                      className="buttonsearch"
-                      type="submit"
-                      style={{ fontFamily: "Roboto" }}
-                    >
-                      Search
-                    </buton>
+              <p font-size="25px">What song or album are you looking for?</p>
+              <label
+                className="search d-flex justify-content-center"
+                for="inpt_search"
+              >
+                <input
+                  id="inpt_search"
+                  placeholder="i.e. Queen"
+                  type="text"
+                  className="mr-2 "
+                />
+                <buton className="buttonsearch d-flex " type="submit">
+                  Search
+                </buton>
               </label>
             </div>
           </div>

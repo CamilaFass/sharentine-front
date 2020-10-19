@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoutIcon from './logout-icon.png';
-
+import userIcon from './user-icon.png';
 import './LoggedMenu.css';
 
 const LoggedMenu = () => {
@@ -44,6 +44,12 @@ const LoggedMenu = () => {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link className="nav-link" to="/profile">
+              <img
+                src={userIcon}
+                alt="logout icon"
+                width="20px"
+                height="20px"
+              />
               Profile
             </Link>
           </li>
