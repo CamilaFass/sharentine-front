@@ -27,8 +27,8 @@ And you can find the backend repository <a href="https://github.com/CamilaFass/s
 
 ### Collaborators
 
-Aruã Monteiro
+<a href="https://github.com/AruaMonteiro">Aruã Monteiro</a>
 <br />
-Camila Fassarella
+<a href="https://github.com/CamilaFass">Camila Fassarella</a>
 <br />
-Victor Monteiro
+<a href="https://github.com/victormonteiro2">Victor Monteiro</a>
