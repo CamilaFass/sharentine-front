@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api'
+  baseURL: process.env.REACT_APP_API,
 });
 
-const loggedInUser = localStorage.getItem('loggedInUser');
+const loggedInUser = localStorage.getItem("loggedInUser");
 
 const storedUser = JSON.parse(loggedInUser || '""');
 
@@ -13,7 +13,7 @@ api.interceptors.request.use(
     // Do something before request is sent
     if (storedUser.token) {
       config.headers = {
-        Authorization: `Bearer ${storedUser.token}`
+        Authorization: `Bearer ${storedUser.token}`,
       };
     }
     return config;
