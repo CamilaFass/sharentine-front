@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../apis/';
+import InitialImg from './initialimg.svg';
 
 import './SignUp.css';
 
@@ -16,6 +17,7 @@ function Login(props) {
 
   const handleChange = (event) => {
     setState({
+      ...state,
       [event.currentTarget.name]: event.currentTarget.value
     });
   };
@@ -30,7 +32,6 @@ function Login(props) {
 
       // Disparar a requisiçāo manualmente através do React
       const response = await api.post('/login', state);
-      console.log(response.data);
 
       // Atualiza o state do componente pai
       props.setUserState(response.data);
@@ -58,20 +59,32 @@ function Login(props) {
   };
 
   return (
-    <div className="SignUp">
+    <div className="SignUp d-flex">
+      <div className="col-md-7 d-flex justify-content-center">
+        <img
+          className="img-form-signup w-100 justify-content-center"
+          src={InitialImg}
+          alt="initial site image"
+          style={{ paddingTop: 110 }}
+        />
+      </div>
       <div
-        className="div-signup d-flex justify-content-center align-content-center flex-wrap w-100"
+        className="div-signup col-md-5 d-flex justify-content-center align-content-center flex-wrap w-100"
         id="form"
       >
         <section className="section-form-signup-rectangle justify-content-center d-flex align-content-center flex-wrap">
           <h1 className="sign-up-h1">
-            <span className="span-azul">Welcome back to Sharentine!</span>
+            <span className="span-azul" style={{ fontFamily: 'Roboto' }}>
+              Welcome to Sharentine!
+            </span>
           </h1>
           <form
             className="d-flex flex-column text-center"
             onSubmit={handleSubmit}
           >
-            <label htmlFor="signupEmailInput">Email</label>
+            <label htmlFor="signupEmailInput" style={{ fontFamily: 'Gafata' }}>
+              Email
+            </label>
             <input
               type="email"
               id="signupEmailInput"
@@ -82,7 +95,12 @@ function Login(props) {
               value={state.email}
             />
 
-            <label for="signUpPasswordInput">Password</label>
+            <label
+              htmlFor="signUpPasswordInput"
+              style={{ fontFamily: 'Gafata' }}
+            >
+              Password
+            </label>
             <input
               type="password"
               className="password"
@@ -97,19 +115,19 @@ function Login(props) {
             {state.loading ? (
               <LoadingButton />
             ) : (
-              <button type="submit" className="btn btn-primary">
-                Log In
+              <button
+                type="submit"
+                className="btn"
+                style={{ fontFamily: 'Gafata' }}
+              >
+                <strong>Log In</strong>
               </button>
             )}
           </form>
-          <a href="#">Create New Account</a>
+          <Link to="/signup" style={{ fontFamily: 'Gafata', color: '#3e4f46' }}>
+            Create New Account
+          </Link>
         </section>
-
-        <img
-          className="img-form-signup w-50"
-          src="./images/authImg.svg"
-          alt=""
-        />
       </div>
     </div>
   );

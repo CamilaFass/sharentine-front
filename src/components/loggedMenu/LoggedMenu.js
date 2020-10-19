@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logoutIcon from './logout-icon.png';
+import userIcon from './user-icon.png';
+import './LoggedMenu.css';
 
-import "./LoggedMenu.css";
-
-const Menu = () => {
+const LoggedMenu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light menu">
-      <a className="navbar-brand menu-brand mr-5" href="#">
+      <Link className="navbar-brand menu-brand mr-5" to="/feed">
         Sharentine
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -22,33 +24,45 @@ const Menu = () => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
+          <li className="nav-item">
+            <Link className="nav-link" to="/book-search">
               Books
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/movie-search">
               Movies/Series
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/music-search">
               Music
-            </a>
+            </Link>
           </li>
         </ul>
 
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Perfil
-            </a>
+            <Link className="nav-link" to="/profile">
+              <img
+                src={userIcon}
+                alt="logout icon"
+                width="20px"
+                height="20px"
+              />
+              Profile
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/logout">
+              <img
+                src={logoutIcon}
+                alt="logout icon"
+                width="20px"
+                height="20px"
+              />
               Logout
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -56,4 +70,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default LoggedMenu;

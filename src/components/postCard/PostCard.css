@@ -1,0 +1,47 @@
+.h7 {
+  font-size: 0.8rem;
+  font-family: "Roboto";
+}
+
+.gedf-wrapper {
+  margin-top: 0.97rem;
+}
+
+.card-link {
+  border: none;
+  background-color: #f8f8f8;
+}
+
+@media (min-width: 992px) {
+  .gedf-main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 25px;
+    float: inline-end;
+  }
+  .gedf-card {
+    margin-bottom: 2.77rem;
+    width: 700px;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+  content: none;
+  display: none;
+}
+
+.sharebutton {
+  border-radius: 10px;
+  /* border: 1px solid #3e4f46; */
+  background-color: #addbc1;
+  color: white;
+}
+
+.card-title {
+  color: #3e4f46;
+  font-family: "Roboto";
+}
