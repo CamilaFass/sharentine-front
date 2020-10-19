@@ -5,7 +5,7 @@ We understand these are difficult times, due to quarantine we are spending way m
 This the 3rd and final project from our full-time web development bootcamp at Ironhack.
 <br />
 <strong>See the live website <a href="https://sharentine.herokuapp.com/">HERE</a>.</strong>
-<br/ >
+<br />
 And you can find the backend repository <a href="https://github.com/CamilaFass/sharentine-back">here</a>.
 
 ### Built with:
