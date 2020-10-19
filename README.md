@@ -18,11 +18,11 @@ And you can find the backend repository <a href="https://github.com/CamilaFass/s
   - Express
   - ReactJS
   - NodeJS
+- Passport
 - Javascript
-- CSS
 - Bootstrap
 - Heroku (deploy)
-- Create React App
+
   <br>
 
 ### Collaborators
