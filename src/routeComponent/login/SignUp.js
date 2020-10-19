@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import Menu from '../components/menu/Menu';
 // import Footer from '../components/footer/Footer';
-import api from "../../apis/";
-import { Link } from "react-router-dom";
-import "./SignUp.css";
-import LoadingButton from "../../components/loadingButton/LoadingButton";
+import api from '../../apis/';
+import { Link } from 'react-router-dom';
+import './SignUp.css';
+import LoadingButton from '../../components/loadingButton/LoadingButton';
 
 function SignUp(props) {
   const [state, setState] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
     loading: false,
-    error: "",
+    error: ''
   });
 
   const handleChange = (event) => {
     setState({
       ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
+      [event.currentTarget.name]: event.currentTarget.value
     });
-    console.log(state);
   };
 
   const handleSubmit = async (event) => {
@@ -31,14 +30,13 @@ function SignUp(props) {
       event.preventDefault();
 
       // Disparar a requisiçāo manualmente através do React
-      const response = await api.post("/signup", state);
-      console.log(response.data);
+      const response = await api.post('/signup', state);
 
       // Cancela o estado de loading
       setState({ loading: false });
 
       // Navega programaticamente para a home
-      props.history.push("/");
+      props.history.push('/');
       // Força um reload na página para limpar a memória do roteador
       props.history.go();
     } catch (err) {
@@ -55,7 +53,7 @@ function SignUp(props) {
       >
         <section className="section-form-signup-rectangle justify-content-center d-flex align-content-center flex-wrap">
           <h1 className="sign-up-h1">
-            <span className="span-azul" style={{ fontFamily: "Gafata" }}>
+            <span className="span-azul" style={{ fontFamily: 'Gafata' }}>
               Join Us at Sharentine!
             </span>
           </h1>
@@ -66,7 +64,7 @@ function SignUp(props) {
             <label
               method="POST"
               htmlFor="signupUsernameInput"
-              style={{ fontFamily: "Gafata" }}
+              style={{ fontFamily: 'Gafata' }}
             >
               Name
             </label>
@@ -76,12 +74,12 @@ function SignUp(props) {
               className="username"
               name="name"
               placeholder="Your name here"
-              style={{ fontFamily: "Gafata" }}
+              style={{ fontFamily: 'Gafata' }}
               onChange={handleChange}
               value={state.name}
             />
 
-            <label htmlFor="signupEmailInput" style={{ fontFamily: "Gafata" }}>
+            <label htmlFor="signupEmailInput" style={{ fontFamily: 'Gafata' }}>
               Email
             </label>
             <input
@@ -90,7 +88,7 @@ function SignUp(props) {
               className="email"
               name="email"
               placeholder="Your e-mail here"
-              style={{ fontFamily: "Gafata" }}
+              style={{ fontFamily: 'Gafata' }}
               onChange={handleChange}
               value={state.email}
             />
@@ -102,7 +100,7 @@ function SignUp(props) {
               name="password"
               id="signUpPasswordInput"
               placeholder="********"
-              style={{ fontFamily: "Gafata" }}
+              style={{ fontFamily: 'Gafata' }}
               onChange={handleChange}
               value={state.password}
             />
@@ -114,7 +112,7 @@ function SignUp(props) {
               <button
                 type="submit"
                 className="btn"
-                style={{ fontFamily: "Gafata" }}
+                style={{ fontFamily: 'Gafata' }}
               >
                 Create Account
               </button>

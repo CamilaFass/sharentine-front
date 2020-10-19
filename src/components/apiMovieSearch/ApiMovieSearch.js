@@ -36,22 +36,18 @@ export default function SearchMovies() {
             <div className="d-flex justify-content-center m-5 ">
               <div className="cntr">
                 <div className="cntr-innr">
-                  <p style={{ fontFamily: 'Gafata', fontSize: '20px' }}>
-                    What movie are you looking for?
-                  </p>
-                  <label class="search" htmlFor="inpt_search">
+                  <p font-size="25px">What movie are you looking for?</p>
+                  <label
+                    className="search d-flex justify-content-center"
+                    for="inpt_search"
+                  >
                     <input
                       id="inpt_search"
-                      type="text"
                       placeholder="i.e. Jurassic Park"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
+                      type="text"
+                      className="mr-2 "
                     />
-                    <buton
-                      className="buttonsearch"
-                      type="submit"
-                      style={{ fontFamily: 'Roboto' }}
-                    >
+                    <buton className="buttonsearch d-flex " type="submit">
                       Search
                     </buton>
                   </label>
