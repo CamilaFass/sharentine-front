@@ -1,16 +1,23 @@
-@media screen and (min-width: 601px) {
-  #text {
-    font-size: 2rem;
+@media screen and (min-width: 375px) {
+  #headerText {
+    font-size: 5vw;
+    font-weight: bolder;
+  }
+  .card-return-api {
   }
 }
 
-@media screen and (max-width: 600px) {
-  #text {
+@media screen and (min-width: 600px) {
+  #headerText {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  #headerText {
+    font-size: 2rem;
+    font-weight: normal;
+  }
 }
 
 #button-sb {

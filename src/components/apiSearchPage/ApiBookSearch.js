@@ -32,7 +32,7 @@ function ApiBookSearch() {
     <div className="d-flex justify-content-center align-center flex-column ">
       <div className="d-flex justify-content-center  m-5 ">
         <form onSubmit={handleSubmit}>
-          <p id="text">What book are you looking for?</p>
+          <p id="headerText">What book are you looking for?</p>
           <label
             className="search d-flex justify-content-center "
             htmlFor="inpt_search"
@@ -68,7 +68,7 @@ function ApiBookSearch() {
         ) : (
           state.books.map((el) => {
             return (
-              <div className="card-return-api d-flex align-content-between col-3 mb-5 ">
+              <div className="card-return-api d-flex align-content-between col-xl-3 col-sm-6 mb-5 ">
                 <SearchResultBooks book={el} key={el.id} />
               </div>
             );

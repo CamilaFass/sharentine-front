@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import LoggedMenu from '../loggedMenu/LoggedMenu';
 import api from '../../apis/';
+import ReactDOM from 'react-dom';
 import './SearchResultBooks.css';
+import MoreIcon from '@material-ui/icons/More';
+import Button from '@material-ui/core/Button';
 
 function SearchResultBooks(props) {
   const book = props.book;
@@ -12,38 +15,27 @@ function SearchResultBooks(props) {
   }
 
   return (
-    <div className="card   " style={{ height: '70vh' }}>
-      <div className="card-inner" style={{ width: '20vw' }}>
+    <div className="card-books">
+      <div className="card-inner">
         <div className="d-flex justify-content-center mt-3">
-          <img
-            src={book.thumbnail}
-            className="card-img-top "
-            style={{ width: '10vw', height: '30vh' }}
-            alt="..."
-          />
+          <img src={book.thumbnail} className="card-img-top " alt="..." />
         </div>
         <div className="card-body">
           <h5 className="card-title">{book.title}</h5>
-          <div className="d-flex card-footer">
-            <button
-              type="button"
-              className="card-link"
-              style={{ fontFamily: 'Roboto', color: 'gray' }}
-              onClick={handleDescriptionToggle}
-            >
-              <i className="fa fa-chevron-down " aria-hidden="true"></i>
-              Description
-            </button>
-          </div>
-          {state.descriptionToggle ? (
-            <div className="card-footer">
-              <p className="card-text">{book.description}</p>
+          <div className="card-description d-flex">
+            <div class="dropdown">
+              <Button endIcon={<MoreIcon />} variant="contained">
+                Description
+              </Button>
+              <div class="dropdown-content">
+                <p className="card-text">{book.description}</p>
+              </div>
             </div>
-          ) : null}
+          </div>
         </div>
-        <a href="#" className="btn btn-primary">
-          Share
-        </a>
+        <button className="button-sb ml-4  mb-3" type="submit">
+          Share!
+        </button>
       </div>
     </div>
   );
