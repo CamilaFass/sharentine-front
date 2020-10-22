@@ -10,6 +10,9 @@
   }
 }
 
+@media screen and (min-width: 1200px) {
+}
+
 #button-sb {
   color: #3e4f45;
   background-color: #addbc1;

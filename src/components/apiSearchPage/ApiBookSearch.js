@@ -29,51 +29,52 @@ function ApiBookSearch() {
   };
 
   return (
-    <div className="d-flex justify-content-center ">
-      <div className="d-flex row justify-content-center ">
-        <div className="d-flex align-items-center m-5 ">
-          <div className="d-flex row justify-content-center cntr-innr">
-            <form onSubmit={handleSubmit}>
-              <p id="text">What book are you looking for?</p>
-              <label
-                className="search d-flex justify-content-center"
-                htmlFor="inpt_search"
-              >
-                <input
-                  id="inpt_search"
-                  placeholder="i.e. Harry Potter"
-                  type="text"
-                  className="mr-2 "
-                  name="searchInput"
-                  value={state.searchInput}
-                  onChange={handleChange}
-                />
-                <button
-                  id="button-sb"
-                  className="btn btn-primary d-flex "
-                  type="submit"
-                >
-                  Search
-                </button>
-              </label>
-            </form>
-          </div>
-        </div>
+    <div className="d-flex justify-content-center align-center flex-column ">
+      <div className="d-flex justify-content-center  m-5 ">
+        <form onSubmit={handleSubmit}>
+          <p id="text">What book are you looking for?</p>
+          <label
+            className="search d-flex justify-content-center "
+            htmlFor="inpt_search"
+          >
+            <input
+              id="inpt_search"
+              placeholder="i.e. Harry Potter"
+              type="text"
+              className="mr-2 "
+              name="searchInput"
+              value={state.searchInput}
+              onChange={handleChange}
+            />
+            <button
+              id="button-sb"
+              className="btn btn-primary d-flex "
+              type="submit"
+            >
+              Search
+            </button>
+          </label>
+        </form>
+      </div>
+      <div className="d-flex flex-wrap justify-content-around">
         {state.books.length === 0 ? (
-          <div className="d-flex justify-content-center m-5 w-75 ">
+          <div className="d-flex justify-content-center">
             <img
-              className="img-form-signup w-75 h-75"
+              className="img-form-signup w-75 h-75 mt-4"
               src={BookImg}
               alt="initial site image"
             />
           </div>
         ) : (
           state.books.map((el) => {
-            return <SearchResultBooks book={el} key={el.id} />;
+            return (
+              <div className="d-flex align-content-between col-3 mb-5 ">
+                <SearchResultBooks book={el} key={el.id} />
+              </div>
+            );
           })
         )}
       </div>
-      <div className="d-flex">{/* <Footer /> */}</div>
     </div>
   );
 }
