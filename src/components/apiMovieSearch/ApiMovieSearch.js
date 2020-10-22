@@ -30,41 +30,47 @@ export default function SearchMovies() {
 
   return (
     <>
-      <form>
-        <div className="d-flex w-auto h-auto justify-content-center p-3 h-auto d-inline-block">
-          <div className="d-flex row justify-content-center ">
-            <div className="d-flex justify-content-center m-5 ">
-              <div className="cntr">
-                <div className="cntr-innr">
-                  <p font-size="25px">What movie are you looking for?</p>
-                  <label
-                    className="search d-flex justify-content-center"
-                    for="inpt_search"
+      <div className="d-flex justify-content-center ">
+        <div className="d-flex row justify-content-center ">
+          <div className="d-flex align-items-center m-5">
+            <div className="d-flex row justify-content-center cntr-innr">
+              <form>
+                {/* onSubmit={handleSubmit} */}
+                <p id="text">What movie are you looking for?</p>
+                <label
+                  className="search d-flex justify-content-center"
+                  for="inpt_search"
+                >
+                  <input
+                    id="inpt_search"
+                    placeholder="i.e. Jurassic Park"
+                    type="text"
+                    className="mr-2 "
+                    name="searchInput"
+                    // value={state.searchInput}
+                    // onChange={handleChange}
+                  />
+                  <buton
+                    id="button-sb"
+                    className="btn btn-primary d-flex "
+                    type="submit"
                   >
-                    <input
-                      id="inpt_search"
-                      placeholder="i.e. Jurassic Park"
-                      type="text"
-                      className="mr-2 "
-                    />
-                    <buton className="buttonsearch d-flex " type="submit">
-                      Search
-                    </buton>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="d-flex justify-content-center m-5 w-75">
-              <img
-                className="img-form-signup w-50"
-                src={MovieImg}
-                alt="initial site image"
-              />
+                    Search
+                  </buton>
+                </label>
+              </form>
             </div>
           </div>
-          <div className="d-flex">{/* <Footer /> */}</div>
+          <div className="d-flex justify-content-center m-5 w-75">
+            <img
+              className="img-form-signup w-75 h-75"
+              src={MovieImg}
+              alt="initial site image"
+            />
+          </div>
         </div>
-      </form>
+        <div className="d-flex">{/* <Footer /> */}</div>
+      </div>
       <div className="card-list">
         {movies
           .filter((movie) => movie.poster_path)

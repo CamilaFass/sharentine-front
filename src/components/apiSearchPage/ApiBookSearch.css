@@ -1,3 +1,27 @@
-/* .cntr-innr p {
-  font-size: 30px;
-} */
+@media screen and (min-width: 375px) {
+  #headerText {
+    font-size: 5vw;
+    font-weight: bolder;
+  }
+  .card-return-api {
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #headerText {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #headerText {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+}
+
+#button-sb {
+  color: #3e4f45;
+  background-color: #addbc1;
+  border: solid #718f7e;
+}
