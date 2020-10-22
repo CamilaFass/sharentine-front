@@ -68,7 +68,7 @@ function ApiBookSearch() {
         ) : (
           state.books.map((el) => {
             return (
-              <div className="d-flex align-content-between col-3 mb-5 ">
+              <div className="card-return-api d-flex align-content-between col-3 mb-5 ">
                 <SearchResultBooks book={el} key={el.id} />
               </div>
             );
