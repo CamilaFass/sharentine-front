@@ -10,10 +10,6 @@ function SearchResultBooks(props) {
   const book = props.book;
   const [state, setState] = useState({ descriptionToggle: false });
 
-  function handleDescriptionToggle() {
-    setState({ descriptionToggle: !state.descriptionToggle });
-  }
-
   return (
     <div className="d-flex card-books">
       <div className="card-inner">
@@ -33,8 +29,18 @@ function SearchResultBooks(props) {
             </div>
           </div>
         </div>
-        <div>
-          <button className="button-sb ml-4  mb-3" type="submit">
+        <div className=" m-5">
+          <textarea
+            name="content"
+            className="form-control"
+            id="message"
+            rows="3"
+            placeholder="Share your opinion about this book"
+            style={{ fontFamily: 'Gafata' }}
+            // onChange={handleChange}
+            value={state.content}
+          ></textarea>
+          <button className="button-sb m-4" type="submit">
             Share!
           </button>
         </div>
