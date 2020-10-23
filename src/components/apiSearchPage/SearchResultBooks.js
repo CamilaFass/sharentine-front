@@ -15,7 +15,7 @@ function SearchResultBooks(props) {
   }
 
   return (
-    <div className="card-books">
+    <div className="d-flex card-books">
       <div className="card-inner">
         <div className="d-flex justify-content-center mt-3">
           <img src={book.thumbnail} className="card-img-top " alt="..." />
@@ -33,9 +33,11 @@ function SearchResultBooks(props) {
             </div>
           </div>
         </div>
-        <button className="button-sb ml-4  mb-3" type="submit">
-          Share!
-        </button>
+        <div>
+          <button className="button-sb ml-4  mb-3" type="submit">
+            Share!
+          </button>
+        </div>
       </div>
     </div>
   );
