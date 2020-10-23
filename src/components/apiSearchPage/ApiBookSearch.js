@@ -7,7 +7,7 @@ import BookImg from './undraw_book_lover_mkck.svg';
 import books from 'google-books-search';
 import SearchResultBooks from './SearchResultBooks';
 
-function ApiBookSearch() {
+function ApiBookSearch(props) {
   const [state, setState] = useState({ searchInput: '', books: [] });
 
   function handleChange(event) {
@@ -69,7 +69,7 @@ function ApiBookSearch() {
           state.books.map((el) => {
             return (
               <div className="card-return-api d-flex align-content-between col-xl-3 col-sm-6 mb-5 ">
-                <SearchResultBooks book={el} key={el.id} />
+                <SearchResultBooks book={el} key={el.id} user={props.user} />
               </div>
             );
           })
